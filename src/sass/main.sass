@@ -1,35 +1,89 @@
+$white-text-color: #e8eff7
+$white-text-hover-color: #D4DEE9
+$dark-blue-text-color: #2a5885 
+$dark-blue-text-hover-color: #113B64 
+
 *
 	padding: 0
 	margin: 0
+body
+	font-family: Arial
+	font-size: 14px
+	color: #333
+a
+	text-decoration: none
+ul
+	list-style: none
+
+@import './components.sass'
+
+
 .center
 	max-width: 900px
 	margin: auto
 .header
 	height: 42px
-	padding: 0 15px
+	padding: 0 20px
 	background-color: #4a76a8
-	border-radius: 0 0 10px 10px;
-	color: #e8eff7
+	border-radius: 0 0 10px 10px
+	color: $white-text-color
 	border-bottom: 1px solid #4872a3
 	text-shadow: 0 1px 0 #4e7097
-	font-size: 13.5px
-	font-weight: 700
-	font-family: Arial
+	font-weight: 600
 	line-height: 42px
 	.logo
 		font-size: 16px
 		&__bg
+			margin-right: 5px
 			padding: 2px 5px
-			background-color: #e8eff7
+			background-color: $white-text-color
 			color: #4872a3
 			border-radius: 3px
+		.text
+			letter-spacing: 3px
+	.exit
+		float: right
+
 .body
-	padding: 0 15px
+	padding: 0 20px 0 10px
 	.sidebar
 		float: left
 		width: 190px
+		box-sizing: border-box
+		padding: 20px 0
 	.content
 		margin-left: 190px
-		padding: 12px
+		padding: 20px
 		border: 1px solid #E7E8EF
+.sidebar-menu
+	ul
+		li
+			width: 95%
+			position: relative
+			overflow: hidden
+			&.active-item
+				background-color: #f1f1f1
+				border-radius: 3px
+			&:hover
+				background-color: #f9f9f9
+				a
+					color: $dark-blue-text-hover-color
+				&.active-item
+					background-color: #f1f1f1
+					a
+						cursor: default
+						color: $dark-blue-text-color
+			a
+				box-sizing: border-box
+				display: inline-block
+				height: 100%
+				width: 100%
+				padding: 6px 0 6px 10px
+				color: $dark-blue-text-color
+				white-space: nowrap
+				.cbadge
+					position: absolute
+					right: 6px
+					top: 6px
+
 
