@@ -1,7 +1,9 @@
 $white-text-color: #e8eff7
 $white-text-hover-color: #D4DEE9
 $dark-blue-text-color: #2a5885 
-$dark-blue-text-hover-color: #113B64 
+$dark-blue-text-hover-color: #113B64
+$muted-text-color: #656565 
+$main-border-color: #e7e8ec
 
 *
 	padding: 0
@@ -19,7 +21,7 @@ ul
 
 
 .center
-	max-width: 900px
+	width: 900px
 	margin: auto
 .header
 	height: 42px
@@ -53,23 +55,24 @@ ul
 		padding: 20px 0
 	.content
 		margin-left: 190px
-		padding: 20px
-		border: 1px solid #E7E8EF
+		border: 1px solid $main-border-color
+		border-radius: 0 0 3px 3px
 .sidebar-menu
 	ul
 		li
 			width: 95%
 			position: relative
 			overflow: hidden
+			transition: background-color .2s
 			&.active-item
-				background-color: #f1f1f1
+				background-color: #EDEDF0
 				border-radius: 3px
 			&:hover
-				background-color: #f9f9f9
+				background-color: #EDEDF0
 				a
 					color: $dark-blue-text-hover-color
 				&.active-item
-					background-color: #f1f1f1
+					background-color: #EDEDF0
 					a
 						cursor: default
 						color: $dark-blue-text-color
@@ -86,4 +89,56 @@ ul
 					right: 6px
 					top: 6px
 
+.dialogs
+	.dialog-wrap
+		position: relative
+		padding: 16px 0
+		overflow: hidden
+		border-bottom: 1px solid $main-border-color
+		transition: background-color 0.2s
+		.dialog
+			.dialog__photo
+				float: left
+				width: 50px
+				height: 50px
+				border-radius: 50%
+				overflow: hidden
+				background-color: #f1f1f1
+			.dialog__body
+				margin-left: 70px
+				overflow: hidden
+				.dialog__header
+					padding-top: 5px
+					.talker
+						font-weight: 600
+					.dialog__close
+						display: inline-block
+						visibility: hidden
+						float: right
+						margin-top: -2px
+						width: 20px
+						height: 20px
+						text-align: center
+						border-radius: 50%
+						line-height: 19px
+						background-color: #D7D7E0
+						&:hover
+							cursor: pointer
+							background-color: #c6c6df
+				.last-msg
+					padding-top: 5px
+					white-space: nowrap
+					color: $muted-text-color
+		&:hover
+			background-color: #f5f7fa
+			cursor: pointer
+			.dialog
+				.dialog__body
+					.dialog__header
+						.dialog__close
+							visibility: visible
+	li
+		&:last-child
+			.dialog-wrap
+				border-bottom: none
 
