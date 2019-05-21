@@ -54,7 +54,7 @@ ul
 		box-sizing: border-box
 		padding: 20px 0
 	.content
-		margin-left: 190px
+		margin-left: 200px
 		border: 1px solid $main-border-color
 		border-radius: 0 0 3px 3px
 .sidebar-menu
@@ -62,20 +62,10 @@ ul
 		li
 			width: 95%
 			position: relative
-			overflow: hidden
-			transition: background-color .2s
-			&.active-item
-				background-color: #EDEDF0
-				border-radius: 3px
 			&:hover
 				background-color: #EDEDF0
 				a
 					color: $dark-blue-text-hover-color
-				&.active-item
-					background-color: #EDEDF0
-					a
-						cursor: default
-						color: $dark-blue-text-color
 			a
 				box-sizing: border-box
 				display: inline-block
@@ -84,6 +74,10 @@ ul
 				padding: 6px 0 6px 10px
 				color: $dark-blue-text-color
 				white-space: nowrap
+				transition: background-color .2s
+				&.active-item
+					background-color: #EDEDF0
+					border-radius: 3px
 				.cbadge
 					position: absolute
 					right: 6px
@@ -141,4 +135,25 @@ ul
 		&:last-child
 			.dialog-wrap
 				border-bottom: none
+.ui-search
+	position: relative
+	padding-top: 10px
+	border-bottom: 1px solid $main-border-color
+	.ui-search__input
+		box-sizing: border-box
+		display: inline-block
+		width: 100%
+		padding: 14px 30px
+		border: none
+		&:focus
+			outline: none
+	.fa-search
+		position: absolute
+		top: 22px
+		left: 20px
+		font-size: 18px
+		color: #a3a3a3
+
+
+
 

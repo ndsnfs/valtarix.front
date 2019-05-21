@@ -15,88 +15,46 @@
             <nav class="sidebar-menu">
               <ul>
                 <li>
-                  <a href="">
+                  <router-link to="/" tag="a" active-class="active-item" exact>
                     <span>Моя страница</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a href="">
+                  <router-link to="/friends" tag="a" active-class="active-item">
                     <span>Мои друзья</span>
                     <span class="cbadge cbadge_xs">
                       +2
                     </span>
-                  </a>
+                  </router-link>
                 </li>
-                <li class="active-item">
-                  <a href="">
+                <li>
+                  <router-link to="/messages" tag="a" active-class="active-item">
                     <span>Мои сообщения</span>
                     <span class="cbadge cbadge_xs">
                       +1
                     </span>
-                  </a>
+                  </router-link>
                 </li>
                 <li>
-                  <a href="">
+                  <router-link to="/settings" tag="a" active-class="active-item">
                     <span>Мои настройки</span>
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </nav>
           </div>
           <div class="content">
-            <ul class="dialogs">
-              <li>
-                <div class="dialog-wrap">
-                  <div class="dialog padding-flank clearfix">
-                    <div class="dialog__photo">
-                    </div>
-                    <div class="dialog__body">
-                      <div class="dialog__header">
-                        <span class="talker">Нестерюк Юлия</span>
-                        <span class="dialog__close">x</span>
-                      </div>
-                       <div class="last-msg">
-                         Предлагаемый стиль - это форма clearfix с обратной совместимостью. Я нашел...
-                       </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dialog-wrap">
-                  <div class="dialog padding-flank clearfix">
-                    <div class="dialog__photo">
-                    </div>
-                    <div class="dialog__body">
-                      <div class="dialog__header">
-                        <span class="talker">Плотников Василий</span>
-                        <span class="dialog__close">x</span>
-                      </div>
-                       <div class="last-msg">
-                         Это текст-"рыба", часто используемый в 
-                       </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dialog-wrap">
-                  <div class="dialog padding-flank clearfix">
-                    <div class="dialog__photo">
-                    </div>
-                    <div class="dialog__body">
-                      <div class="dialog__header">
-                        <span class="talker">Курганов Леха</span>
-                        <span class="dialog__close">x</span>
-                      </div>
-                       <div class="last-msg">
-                         Это текст-"рыба", часто используемый в 
-                       </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <div class="ui-search">
+              <div class="padding-flank">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text"
+                        name="search[friends]"
+                        class="ui-search__input"
+                        placeholder="начните вводить имя собеседника"
+                        autocomplete="off">
+              </div>
+            </div>
+            <router-view></router-view> 
           </div>
         </div>
       </div>
