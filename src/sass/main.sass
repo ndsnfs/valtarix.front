@@ -3,7 +3,7 @@ $white-text-hover-color: #D4DEE9
 $dark-blue-text-color: #2a5885 
 $dark-blue-text-hover-color: #113B64
 $muted-text-color: #656565 
-$muted-blue-color: #A8B2D0
+$muted-blue-color: #A1ABB3
 $muted-blue-color_hover: #8690bd
 $main-border-color: #e7e8ec
 
@@ -51,20 +51,38 @@ input::-webkit-input-placeholder
 		float: right
 
 .body
-	padding: 0 20px 0 10px
+	display: flex
+	padding-right: 20px
+	justify-content: space-between
 	.sidebar
-		float: left
-		width: 190px
+		flex: none
+		width: 200px
+		padding-top: 14px
 		box-sizing: border-box
-		padding: 20px 0
 	.content
-		margin-left: 200px
-		border: 1px solid $main-border-color
-		border-radius: 0 0 3px 3px
+		flex: 1
+		display: flex
+		overflow: hidden
+		.content__main
+			flex: 1
+			border: 1px solid $main-border-color
+		.content__rsidebar
+			flex: none
+			width: 200px
+			padding-top: 14px
+			box-sizing: border-box
+.rsidebar
+	box-sizing: border-box
+	padding: 10px
+	margin-left: 20px
+	border: 1px solid $main-border-color
+	border-radius: 3px
+	height: 100px
+
 .sidebar-menu
 	ul
+		margin-left: -10px
 		li
-			width: 95%
 			position: relative
 			&:hover
 				background-color: #EDEDF0
@@ -135,7 +153,6 @@ input::-webkit-input-placeholder
 				border-bottom: none
 .ui-search
 	position: relative
-	padding-top: 10px
 	border-bottom: 1px solid $main-border-color
 	.ui-search__input
 		box-sizing: border-box
@@ -147,7 +164,7 @@ input::-webkit-input-placeholder
 			outline: none
 	.fa-search
 		position: absolute
-		top: 22px
+		top: 12px
 		left: 20px
 		font-size: 18px
 		color: $muted-blue-color

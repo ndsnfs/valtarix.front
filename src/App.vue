@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="body">
-          <div class="sidebar">
+          <div class="sidebar padding-flank">
             <nav class="sidebar-menu">
               <ul>
                 <li>
@@ -43,19 +43,7 @@
               </ul>
             </nav>
           </div>
-          <div class="content">
-            <div class="ui-search">
-              <div class="padding-flank">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="text"
-                        name="search[friends]"
-                        class="ui-search__input"
-                        placeholder="начните вводить имя собеседника"
-                        autocomplete="off">
-              </div>
-            </div>
-            <router-view></router-view> 
-          </div>
+          <router-view></router-view> 
         </div>
       </div>
   </div>
