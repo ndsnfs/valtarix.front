@@ -3,6 +3,8 @@ $white-text-hover-color: #D4DEE9
 $dark-blue-text-color: #2a5885 
 $dark-blue-text-hover-color: #113B64
 $muted-text-color: #656565 
+$muted-blue-color: #A8B2D0
+$muted-blue-color_hover: #8690bd
 $main-border-color: #e7e8ec
 
 *
@@ -16,6 +18,8 @@ a
 	text-decoration: none
 ul
 	list-style: none
+input::-webkit-input-placeholder
+	color: $muted-blue-color
 
 @import './components.sass'
 
@@ -106,19 +110,13 @@ ul
 					.talker
 						font-weight: 600
 					.dialog__close
-						display: inline-block
 						visibility: hidden
 						float: right
 						margin-top: -2px
-						width: 20px
-						height: 20px
-						text-align: center
-						border-radius: 50%
-						line-height: 19px
-						background-color: #D7D7E0
+						color: $muted-blue-color
 						&:hover
 							cursor: pointer
-							background-color: #c6c6df
+							color: $muted-blue-color_hover
 				.last-msg
 					padding-top: 5px
 					white-space: nowrap
@@ -152,7 +150,7 @@ ul
 		top: 22px
 		left: 20px
 		font-size: 18px
-		color: #a3a3a3
+		color: $muted-blue-color
 
 
 

@@ -1,3 +1,3 @@
 <template>
-	<div>Settings</div>
+	<div class="padding-flank">Settings</div>
 </template>

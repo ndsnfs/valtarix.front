@@ -1,51 +1,20 @@
 <template>
 	<ul class="dialogs">
-	  <li>
+	  <li v-for="dialog in dialogs">
 	    <div class="dialog-wrap">
 	      <div class="dialog padding-flank clearfix">
 	        <div class="dialog__photo">
+	        	<img :src="'src/assets/img/thumbs/' + dialog.img">
 	        </div>
 	        <div class="dialog__body">
 	          <div class="dialog__header">
-	            <span class="talker">Нестерюк Юлия</span>
-	            <span class="dialog__close">x</span>
+	            <span class="talker">{{ dialog.talker }}</span>
+	            <span class="dialog__close">
+	            	<i class="fa fa-times" aria-hidden="true"></i>
+	            </span>
 	          </div>
 	           <div class="last-msg">
-	             Предлагаемый стиль - это форма clearfix с обратной совместимостью. Я нашел...
-	           </div>
-	        </div>
-	      </div>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="dialog-wrap">
-	      <div class="dialog padding-flank clearfix">
-	        <div class="dialog__photo">
-	        </div>
-	        <div class="dialog__body">
-	          <div class="dialog__header">
-	            <span class="talker">Плотников Василий</span>
-	            <span class="dialog__close">x</span>
-	          </div>
-	           <div class="last-msg">
-	             Это текст-"рыба", часто используемый в 
-	           </div>
-	        </div>
-	      </div>
-	    </div>
-	  </li>
-	  <li>
-	    <div class="dialog-wrap">
-	      <div class="dialog padding-flank clearfix">
-	        <div class="dialog__photo">
-	        </div>
-	        <div class="dialog__body">
-	          <div class="dialog__header">
-	            <span class="talker">Курганов Леха</span>
-	            <span class="dialog__close">x</span>
-	          </div>
-	           <div class="last-msg">
-	             Это текст-"рыба", часто используемый в 
+	             {{ dialog.lastMsg }}
 	           </div>
 	        </div>
 	      </div>
@@ -55,9 +24,31 @@
 </template>
 
 <script>
-	
+
 	export default {
-		
+		data() {
+			return {
+				dialogs: [
+					{
+						talker: 'Нестерюк Юлия',
+						lastMsg: 'Предлагаемый стиль - это форма clearfix с обратной совместимостью. Я нашел...',
+						img: 'F4_7w1KnqKs.jpg'
+					},
+					{
+						talker: 'Плотников Василий',
+						lastMsg: 'Это текст-"рыба", часто используемый в',
+						img: 'KpRbPsweqcc.jpg'
+					},
+					{
+						talker: 'Курганов Леха',
+						lastMsg: 'Это текст-"рыба", часто используемый в',
+						img: 'IGQ3g3J19vg.jpg'
+					}
+				]
+			}
+		},
+		components: {
+		}
 	}
 
 </script>
