@@ -1,3 +1,7 @@
 <template>
-	<div class="padding-flank">Settings</div>
+	<div class="content">
+		<div class="content__main">
+			фыфы
+		</div>
+	</div>	
 </template>

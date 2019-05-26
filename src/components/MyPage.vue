@@ -1,7 +1,7 @@
 <template>
-	<div>
-		<div class="padding-flank">
-			MyPage
+	<div class="content">
+		<div class="content__main">
+			моя страница
 		</div>
-	</div>
+	</div>	
 </template>

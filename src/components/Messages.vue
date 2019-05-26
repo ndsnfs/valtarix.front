@@ -1,18 +1,11 @@
 <template>
 	<div class="content">
 		<div class="content__main">
-			<div class="ui-search">
-				<div class="padding-flank">
-					<i class="fa fa-search" aria-hidden="true"></i>
-					<input type="text"
-						name="search[friends]"
-						class="ui-search__input"
-						placeholder="начните вводить имя собеседника"
-						autocomplete="off">
-				</div>
-			</div>
+			<ui-search :ui-search-placeholder="uiSeachPlaceholder"
+						@input="onSearch($event)">
+			</ui-search>
 			<ul class="dialogs">
-			  <li v-for="dialog in dialogs">
+			  <li v-for="dialog in computedDialogs">
 			    <div class="dialog-wrap">
 			      <div class="dialog padding-flank clearfix">
 			        <div class="dialog__photo">
@@ -34,17 +27,18 @@
 			  </li>
 			</ul>
 		</div>
-		<div class="content__rsidebar">
-			<div class="rsidebar"></div>
-		</div>
 	</div>
 </template>
 
 <script>
 
+	import UiSearch from './UiSearch';
+
 	export default {
 		data() {
 			return {
+				uiSeachValue: '',
+				uiSeachPlaceholder: 'начните вводить имя собеседника',
 				dialogs: [
 					{
 						talker: 'Нестерюк Юлия',
@@ -64,7 +58,19 @@
 				]
 			}
 		},
+		computed: {
+			computedDialogs() {
+
+				return this.dialogs.filter(v => v.talker.indexOf(this.uiSeachValue) !== -1)
+			}
+		},
 		components: {
+			'ui-search': UiSearch
+		},
+		methods: {
+			onSearch(e) {
+				this.uiSeachValue = e.target.value
+			}
 		}
 	}
 
