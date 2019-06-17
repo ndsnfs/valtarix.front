@@ -4,7 +4,9 @@ import VueRouter from 'vue-router'
 
 import MyPage from './components/MyPage'
 import Messages from './components/Messages'
-import Friends from './components/Friends'
+import FriendsRoot from './components/friends/Root'
+import FriendsMy from './components/friends/My'
+import FriendsSearch from './components/friends/Search'
 import Settings from './components/Settings'
 
 import './sass/main.sass'
@@ -22,7 +24,17 @@ const routes = [
 	},
 	{
 		path: '/friends',
-		component: Friends
+		component: FriendsRoot,
+		children: [
+			{
+				path: '/',
+				component: FriendsMy,
+			},
+			{
+				path: 'search',
+				component: FriendsSearch,
+			},
+		]
 	},
 	{
 		path: '/settings',

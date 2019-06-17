@@ -16,7 +16,8 @@
 					:name="name"
 					:value="value">
 		</div>
-		<div v-if="isVisibleDropdown" class="m-select__dropdown-list">
+		<div v-if="isVisibleDropdown"
+				class="m-select__dropdown-list">
 			<ul>
 				<li v-for="(item, idx) in computedList">
 					<span @mousedown="selectItem(item.name)"
@@ -55,7 +56,7 @@
 		},
 		methods: {
 			onFocus() {
-				this.isVisibleDropdown = true
+				this.dropdownShow()
 			},
 			onBlur() {
 				this.dropdownHide()
@@ -78,6 +79,9 @@
 			dropdownHide() {
 				this.isVisibleDropdown = false
 				this.activeItemIdx = -1
+			},
+			dropdownShow() {
+				this.isVisibleDropdown = true
 			}
 		}
 	}
@@ -89,6 +93,7 @@
 	.m-select {
 		width: 100%;
 		height: 26px;
+		position: relative;
 	}
 	.m-select__search {
 		position: relative;
@@ -115,20 +120,29 @@
 	}
 	.search__dropdown-ico {
 		position: absolute;
-		right: 0px;
+		top: 0;
+		right: 0;
 		width: 26px;
 		height: 100%;
 		line-height: 20px;
 		text-align: center;
-		z-index: 1001;
 		color: #929397;
 		cursor: pointer;
+		z-index: 1001;
+		background-color: #fff;
+		border-left: 1px solid #f6f6f6;
 	}
 	.m-select__dropdown-list {
+		position: absolute;
+		width: 100%;
+		max-height: 200px;
+		box-sizing: border-box;
 		padding-top: 6px;
 		background-color: #fff;
 		border: 1px solid #d6d7db;
 		border-top: none;
+		z-index: 1002;
+		overflow-y: auto;
 	}
 	.m-select__dropdown-list>ul>li>span {
 		display: inline-block;
