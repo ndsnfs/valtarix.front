@@ -2,11 +2,38 @@ $white-text-color: #e8eff7
 $white-text-hover-color: #D4DEE9
 $dark-blue-text-color: #2a5885 
 $dark-blue-text-hover-color: #113B64
+$muted-text-color: #656565 
+$muted-blue-color: #A1ABB3
+$muted-blue-color_hover: #8690bd
+$main-border-color: #e7e8ec
+
+.back-block
+	height: 42px
+	border-bottom: 1px solid $main-border-color
+	.back-block_btn
+		display: inline-block
+		height: 100%
+		color: $muted-text-color
+		cursor: pointer
+		padding: 0 26px 0 20px
+		span
+			margin-left: 6px
+		i
+			vertical-align: middle
+		&:after
+			content: ''
+			background-color: red
+			display: inline-block
+			height: 100%
+			vertical-align: middle
+		&:hover
+			background-color: #f6f6f6
 
 .m-btn_no
 	border: none
 	padding: 0
 	background-color: transparent
+	outline: none
 
 .padding-flank
 	padding: 0 20px

@@ -6,7 +6,8 @@
 			</ui-search>
 			<ul class="dialogs">
 			  <li v-for="dialog in computedDialogs">
-			    <div class="dialog-wrap">
+			    <div class="dialog-wrap"
+			    		@click="toChat(dialog.talkerId)">
 			      <div class="dialog padding-flank clearfix">
 			        <div class="dialog__photo">
 			        	<img :src="'src/assets/img/thumbs/' + dialog.img">
@@ -41,16 +42,19 @@
 				uiSeachPlaceholder: 'начните вводить имя собеседника',
 				dialogs: [
 					{
+						talkerId: 100,
 						talker: 'Нестерюк Юлия',
 						lastMsg: 'Предлагаемый с',
 						img: 'F4_7w1KnqKs.jpg'
 					},
 					{
+						talkerId: 101,
 						talker: 'Плотников Василий',
 						lastMsg: 'Это текст-"рыба", часто используемый в',
 						img: 'KpRbPsweqcc.jpg'
 					},
 					{
+						talkerId: 102,
 						talker: 'Курганов Леха',
 						lastMsg: 'Это текст-"рыба", часто используемый в',
 						img: 'IGQ3g3J19vg.jpg'
@@ -70,6 +74,9 @@
 		methods: {
 			onSearch(e) {
 				this.uiSeachValue = e.target.value
+			},
+			toChat(id) {
+				this.$router.push({name: 'chat', params: {id: id}})
 			}
 		}
 	}

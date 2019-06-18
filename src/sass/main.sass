@@ -67,6 +67,7 @@ input::-webkit-input-placeholder
 			flex: 1
 			border: 1px solid $main-border-color
 			border-radius: 0 0 3px 3px
+			border-top: none
 		.content__rsidebar
 			flex: none
 			width: 220px
@@ -134,7 +135,6 @@ input::-webkit-input-placeholder
 
 			.people-action__del
 				float: right
-				outline: none
 
 
 
@@ -227,4 +227,30 @@ input::-webkit-input-placeholder
 				&:hover
 					background-color: #EDEDF0
 
+.messages
+	margin-top: 15px
+	.message
+		margin-bottom: 15px
+		.message__photo
+			float: left
+			img
+				width: 36px
+				width: 36px
+				border-radius: 18px
+		.message__body_talk
+			margin-left: 50px
+			.message__header
+				margin-bottom: 6px
+				a
+					font-weight: 600
+					color: $dark-blue-text-color
+					font-size: 12px
+					&:hover
+						color: $dark-blue-text-hover-color
+				.message__time
+					float: right
+					color: hsla(220,8%,51%,.6)
+					font-size: 12px
+			.message__text
+				margin-right: 80px
 

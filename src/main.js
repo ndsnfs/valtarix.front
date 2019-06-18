@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 import MyPage from './components/MyPage'
 import Messages from './components/Messages'
+import Chat from './components/messages/Chat'
 import FriendsRoot from './components/friends/Root'
 import FriendsMy from './components/friends/My'
 import FriendsSearch from './components/friends/Search'
@@ -21,6 +22,11 @@ const routes = [
 	{
 		path: '/messages',
 		component: Messages
+	},
+	{
+		path: '/messages/:id',
+		name: 'chat',
+		component: Chat	
 	},
 	{
 		path: '/friends',
