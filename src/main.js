@@ -3,7 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 import MyPage from './components/MyPage'
-import Messages from './components/Messages'
+import Messages from './components/messages/Messages'
 import Chat from './components/messages/Chat'
 import FriendsRoot from './components/friends/Root'
 import FriendsMy from './components/friends/My'

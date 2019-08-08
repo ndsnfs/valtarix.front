@@ -33,7 +33,7 @@
 
 <script>
 
-	import UiSearch from './UiSearch';
+	import UiSearch from '../UiSearch';
 
 	export default {
 		data() {

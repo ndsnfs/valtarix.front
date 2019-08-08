@@ -6,14 +6,16 @@ $muted-text-color: #656565
 $muted-blue-color: #A1ABB3
 $muted-blue-color_hover: #8690bd
 $main-border-color: #e7e8ec
+$header_height: 42px
 
 *
 	padding: 0
 	margin: 0
 body
 	font-family: Arial
-	font-size: 14px
+	font-size: 13.5px
 	color: #333
+	background-color: #EDEEF0
 a
 	text-decoration: none
 ul
@@ -21,22 +23,30 @@ ul
 input::-webkit-input-placeholder
 	color: $muted-blue-color
 
+html, body, #app, .center, .body
+	height: 100%
+
 @import './components.sass'
 
 
 .center
-	width: 900px
+	width: 800px
 	margin: auto
+	box-sizing: border-box
 .header
-	height: 42px
+	position: fixed
+	width: 800px
+	height: $header_height
 	padding: 0 20px
+	box-sizing: border-box
 	background-color: #4a76a8
 	border-radius: 0 0 10px 10px
+	z-index: 1000
 	color: $white-text-color
 	border-bottom: 1px solid #4872a3
 	text-shadow: 0 1px 0 #4e7097
 	font-weight: 600
-	line-height: 42px
+	line-height: $header_height
 	.logo
 		font-size: 16px
 		&__bg
@@ -53,24 +63,29 @@ input::-webkit-input-placeholder
 .body
 	display: flex
 	padding-right: 20px
+	padding-top: $header_height
 	justify-content: space-between
+	box-sizing: border-box
 	.sidebar
 		flex: none
+		position: fixed
 		width: 200px
 		padding-top: 14px
 		box-sizing: border-box
 	.content
 		flex: 1
 		display: flex
+		margin-left: 200px
 		align-items: flex-start
 		.content__main
 			flex: 1
 			border: 1px solid $main-border-color
 			border-radius: 0 0 3px 3px
 			border-top: none
+			background-color: #fff
 		.content__rsidebar
 			flex: none
-			width: 220px
+			width: 200px
 			padding-top: 14px
 			box-sizing: border-box
 
@@ -136,8 +151,6 @@ input::-webkit-input-placeholder
 			.people-action__del
 				float: right
 
-
-
 .peples
 	li
 		&:last-child
@@ -190,25 +203,6 @@ input::-webkit-input-placeholder
 			.dialog-wrap
 				border-bottom: none
 
-.ui-search
-	position: relative
-	border-bottom: 1px solid $main-border-color
-	.ui-search__input
-		box-sizing: border-box
-		display: inline-block
-		width: 100%
-		padding: 14px 30px
-		border: none
-		&:focus
-			outline: none
-	.fa-search
-		position: absolute
-		top: 12px
-		left: 20px
-		font-size: 18px
-		color: $muted-blue-color
-
-
 .right_naw
 	margin-bottom: 15px
 	ul
@@ -228,16 +222,18 @@ input::-webkit-input-placeholder
 					background-color: #EDEDF0
 
 .messages
-	margin-top: 15px
+	padding: 15px 0
 	.message
-		margin-bottom: 15px
+		margin-bottom: 34px
+		& :last-child
+			margin-bottom: 0
 		.message__photo
 			float: left
 			img
 				width: 36px
 				width: 36px
 				border-radius: 18px
-		.message__body_talk
+		.message__body
 			margin-left: 50px
 			.message__header
 				margin-bottom: 6px
@@ -251,6 +247,14 @@ input::-webkit-input-placeholder
 					float: right
 					color: hsla(220,8%,51%,.6)
 					font-size: 12px
-			.message__text
-				margin-right: 80px
+			.message__group
+				.message__text
+					margin-bottom: 14px
+					margin-right: 80px
+			.message__group
+				& :last-child
+					margin-bottom: 0px
+
+	& :last-child
+		margin-bottom: 0px
 

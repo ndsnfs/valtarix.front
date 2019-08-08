@@ -35,8 +35,16 @@ $main-border-color: #e7e8ec
 	background-color: transparent
 	outline: none
 
+.v-btn-ico
+	border: none
+	padding: 0
+	background-color: transparent
+	outline: none
+	color: #A6ABB6
+	cursor: pointer
+
 .padding-flank
-	padding: 0 20px
+	padding: 0 24px
 
 .clearfix:after 
    content: " "; /* Older browser do not support empty content */
@@ -68,4 +76,23 @@ $main-border-color: #e7e8ec
 		content: ''
 		display: block
 		clear: left
+		
+
+.ui-search
+	position: relative
+	border-bottom: 1px solid $main-border-color
+	.ui-search__input
+		box-sizing: border-box
+		display: inline-block
+		width: 100%
+		padding: 14px 30px
+		border: none
+		&:focus
+			outline: none
+	.fa-search
+		position: absolute
+		top: 12px
+		left: 20px
+		font-size: 18px
+		color: $muted-blue-color
 
