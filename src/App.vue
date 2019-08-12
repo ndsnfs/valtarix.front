@@ -11,7 +11,7 @@
           </a>
         </div>
         <div class="body">
-          <div class="sidebar padding-flank">
+          <div class="sidebar">
             <nav class="sidebar-menu">
               <ul>
                 <li>

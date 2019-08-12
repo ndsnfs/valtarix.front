@@ -23,7 +23,7 @@ ul
 input::-webkit-input-placeholder
 	color: $muted-blue-color
 
-html, body, #app, .center, .body
+html, body, #app, .center, .body, .content
 	height: 100%
 
 @import './components.sass'
@@ -70,7 +70,7 @@ html, body, #app, .center, .body
 		flex: none
 		position: fixed
 		width: 200px
-		padding-top: 14px
+		padding: 14px 20px 0 24px
 		box-sizing: border-box
 	.content
 		flex: 1
@@ -95,6 +95,7 @@ html, body, #app, .center, .body
 	margin-left: 20px
 	border: 1px solid $main-border-color
 	border-radius: 3px
+	background-color: #fff
 
 .sidebar-menu
 	ul
@@ -102,7 +103,7 @@ html, body, #app, .center, .body
 		li
 			position: relative
 			&:hover
-				background-color: #EDEDF0
+				background-color: #e1e5eb
 				a
 					color: $dark-blue-text-hover-color
 			a
@@ -115,7 +116,7 @@ html, body, #app, .center, .body
 				white-space: nowrap
 				transition: background-color .2s
 				&.active-item
-					background-color: #EDEDF0
+					background-color: #e1e5eb
 					border-radius: 3px
 				.cbadge
 					position: absolute

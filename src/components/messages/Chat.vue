@@ -121,11 +121,14 @@
 					<div class="chat-input__ins chat-input__ins_l">
 					</div>
 					<div class="chat-input__ins chat-input__ins_c">
-						<textarea rows="1" @keydown="kdown($event)" v-model="msg"/>
+						<resizable-textarea @onEnter="sbmit"
+											v-model="message"
+											:text="message">
+						</resizable-textarea>
 					</div>
 					<div class="chat-input__ins chat-input__ins_r">
 						<button class="v-btn-ico"
-								@click="sbmit()">
+								@click="sbmit">
 							<i class="fa fa-2 fa-paper-plane"
 								aria-hidden="true"
 								style="
@@ -140,55 +143,35 @@
 </template>
 
 <script>
+
+	import resizableTextarea from '../ui/resizableTextarea'
 	
 	export default {
 		data() {
 			return {
-				msg: '',
-				initialHeight: null
+				message: ''
 			}
 		},
 		methods: {
 			back() {
 				window.history.back()
 			},
-			kdown(e) {
-
-				var el = e.target
-				
-				if (e.ctrlKey && e.keyCode == 13) {
-					el.value += "\n"
-				}
-				
-				if (e.keyCode == 8) {
-					el.value = el.value.trim("\n")
-				}
-				
-				setTimeout(function(){
-					el.style.cssText = 'height:auto; padding:0';
-					el.style.cssText = 'height:' + el.scrollHeight + 'px';
-				},0);
-				
-				if (!e.ctrlKey && e.keyCode == 13) {
-					e.preventDefault()
-					if(this.msg == '') {
-						return
-					}
-					this.sbmit(el.value)
-					this.msg = ''
-					return
-				}
-			},
-			sbmit(msg) {
-				console.log(msg)
+			sbmit() {
+				this.message = ''
 			}
+		},
+		components: {
+			'resizable-textarea': resizableTextarea
 		}
 	}
 
 </script>
 
 <style scop>
-
+	
+	.content_main {
+		min-height: 100%;
+	}
 	.back-block {
 		position: fixed;
 		width: 578px;
@@ -223,16 +206,6 @@
 	}
 	.chat-input__ins_r {
 		width: 20%;
-	}
-	.chat-input__ins_c>textarea {
-		display:block;
-		width: 100%;
-		padding: 8px 10px;
-		border: 1px solid #d6d7db;
-		outline: none;
-		border-radius: 4px;
-		overflow: hidden;
-		resize:none;
 	}
 	.chat-input__ins_r>button {
 		margin-left: 16px;
