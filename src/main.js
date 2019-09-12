@@ -14,42 +14,40 @@ import './sass/main.sass'
 
 Vue.use(VueRouter)
 
-const routes = [
-	{
-		path: '/',
-		component: MyPage,
-	},
-	{
-		path: '/messages',
-		component: Messages
-	},
-	{
-		path: '/messages/:id',
-		name: 'chat',
-		component: Chat	
-	},
-	{
-		path: '/friends',
-		component: FriendsRoot,
-		children: [
-			{
-				path: '/',
-				component: FriendsMy,
-			},
-			{
-				path: 'search',
-				component: FriendsSearch,
-			},
-		]
-	},
-	{
-		path: '/settings',
-		component: Settings
-	}
-]
-
 let router = new VueRouter({
-	routes
+	routes: [
+		{
+			path: '/',
+			component: MyPage,
+		},
+		{
+			path: '/messages',
+			component: Messages
+		},
+		{
+			path: '/messages/:id',
+			name: 'chat',
+			component: Chat	
+		},
+		{
+			path: '/friends',
+			component: FriendsRoot,
+			children: [
+				{
+					path: '/',
+					component: FriendsMy,
+				},
+				{
+					path: 'search',
+					component: FriendsSearch,
+				},
+			]
+		},
+		{
+			path: '/settings',
+			component: Settings
+		}
+	]
 })
 
 new Vue({
