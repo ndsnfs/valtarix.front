@@ -46,20 +46,3 @@
     </div>
   </div>
 </template>
-
-<script>
-  
-  export default {
-    created() {
-      console.log("CREATED")
-      this.$router.beforeEach(function (to, from, next) {
-        console.log("START")
-        console.log(to)
-        console.log(from)
-        console.log(next)
-        next()
-      })
-    }
-  }
-
-</script>
